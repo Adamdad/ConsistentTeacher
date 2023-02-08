@@ -16,6 +16,28 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 ![](assets/pipeline.jpg)
 
+## Main Results
+
+**MS-COCO 10% Labeled Data**
+
+| Method | mAP| config| 
+|---- | ----| ----
+| MeanTeacher | 35.50 | [config](configs/baseline/mean_teacher_retinanet_r50_fpn_coco_180k_10p.py)|
+| ConsistentTeacher | 40.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
+
+**MS-COCO100% Labeled + Unlabeled Data**
+
+| Method | mAP| config| 
+|---- | ----| ----
+| ConsistentTeacher | 47.70 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|
+
+**PASCAL VOC07 Label + VOC12 Unlabel**
+
+| Method | mAP| AP50| config| 
+|---- | ----| ---- | ---- |
+| MeanTeacher | 53.61 | 77.02 |[config](configs/baseline/mean_teacher_retinanet_r50_fpn_voc0712_72k.py)|
+| ConsistentTeacher | 59.00 | 81.00 |  [config](configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py)|
+
 ## File Orgnizations
 
 ```
