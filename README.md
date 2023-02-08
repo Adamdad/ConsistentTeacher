@@ -10,13 +10,11 @@ This repository contains the offical implementation for our paper
 
 **Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection**
 
-[arxiv](https://arxiv.org/abs/2209.01589) [code](https://github.com/Adamdad/ConsistentTeacher)
+[[arxiv](https://arxiv.org/abs/2209.01589)] [[code](https://github.com/Adamdad/ConsistentTeacher)]
 
 Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang 
 
-
-
-
+![](assets/pipeline.jpg)
 
 ## File Orgnizations
 
@@ -139,3 +137,13 @@ tar -xf STAC_JSON.tar.gz
 # voc/VOCdevkit/VOC2012/instances_trainval.json
 ```
 
+## Citation
+
+```bibtex
+@article{yang2022dery,
+    author    = {Xingyi Yang, Daquan Zhou, Songhua Liu, Jingwen Ye, Xinchao Wang},
+    title     = {Deep Model Reassembly},
+    journal   = {NeurIPS},
+    year      = {2022},
+}
+```
