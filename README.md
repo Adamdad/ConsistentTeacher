@@ -91,6 +91,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 - We use [wandb](https://wandb.ai/) for visualization, if you don't want to use it, just comment line `273-284` in `configs/consistent-teacher/base.py`.
 
 ### Installation
+Install `mmdet` following [INSTALL](https://mmdetection.readthedocs.io/en/stable/get_started.html) and all the requirements, then
 ```
 make install
 ```
@@ -115,28 +116,11 @@ bash tools/dataset/prepare_coco_data.sh conduct
 For concrete instructions of what should be downloaded, please refer to `tools/dataset/prepare_coco_data.sh` line [`11-24`](https://github.com/microsoft/SoftTeacher/blob/863d90a3aa98615be3d156e7d305a22c2a5075f5/tools/dataset/prepare_coco_data.sh#L11)
 ### Training
 
-- To train model on the **partial labeled data** setting:
+- To train model on the **partial labeled data** and **full labeled data** setting:
+
 ```shell script
-# JOB_TYPE: 'baseline' or 'semi', decide which kind of job to run
-# PERCENT_LABELED_DATA: 1, 5, 10. The ratio of labeled coco data in whole training dataset.
+# CONFIG_FILE_PATH: the config file for experiment.
 # GPU_NUM: number of gpus to run the job
-for FOLD in 1 2 3 4 5;
-do
-  bash tools/dist_train_partially.sh <JOB_TYPE> ${FOLD} <PERCENT_LABELED_DATA> <GPU_NUM>
-done
-```
-For example, we could run the following scripts to train our model on 10% labeled data with 8 GPUs:
-
-```shell script
-for FOLD in 1 2 3 4 5;
-do
-  bash tools/dist_train_partially.sh semi ${FOLD} 10 8
-done
-```
-
-- To train model on the **full labeled data** setting:
-
-```shell script
 bash tools/dist_train.sh <CONFIG_FILE_PATH> <NUM_GPUS>
 ```
 For example, to train ours `R50` model with 8 GPUs:
