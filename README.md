@@ -140,10 +140,10 @@ tar -xf STAC_JSON.tar.gz
 ## Citation
 
 ```bibtex
-@article{yang2022dery,
-    author    = {Xingyi Yang, Daquan Zhou, Songhua Liu, Jingwen Ye, Xinchao Wang},
-    title     = {Deep Model Reassembly},
-    journal   = {NeurIPS},
-    year      = {2022},
+@article{wang2023consistent,
+    author    = {Xinjiang Wang, Xingyi Yang, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang },
+    title     = {Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection},
+    journal   = {arxiv},
+    year      = {2023},
 }
 ```
