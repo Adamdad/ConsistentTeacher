@@ -1,8 +1,22 @@
 # Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection
 
-This code base contains the source code to reproduce the results for CVPR 2023
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-100)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-100?p=consistent-teacher-provides-better-1)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-10)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-10?p=consistent-teacher-provides-better-1)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-2)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-2?p=consistent-teacher-provides-better-1)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-5)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-5?p=consistent-teacher-provides-better-1)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-1)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-1?p=consistent-teacher-provides-better-1)
+
+This repository contains the offical implementation for our paper
 
 **Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection**
+
+[arxiv](https://arxiv.org/abs/2209.01589) [code](https://github.com/Adamdad/ConsistentTeacher)
+
+Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang 
+
+
+
+
 
 ## File Orgnizations
 
