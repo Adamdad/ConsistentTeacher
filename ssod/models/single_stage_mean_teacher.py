@@ -167,8 +167,7 @@ class SingleStageMeanTeacher(MultiSteamDetector):
             labels=gt_labels[0],
             class_names=self.CLASSES,
             interval=500,
-            img_norm_cfg=student_info["img_metas"][0]["img_norm_cfg"],
-            writer=self.writer
+            img_norm_cfg=student_info["img_metas"][0]["img_norm_cfg"]
         )
         return losses, bbox_list
 
