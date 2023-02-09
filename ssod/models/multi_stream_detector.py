@@ -1,4 +1,5 @@
 from typing import Dict
+
 from mmdet.models import BaseDetector
 
 
@@ -13,7 +14,8 @@ class MultiSteamDetector(BaseDetector):
 
         self.train_cfg = train_cfg
         self.test_cfg = test_cfg
-        self.inference_on = self.test_cfg.get("inference_on", self.submodules[0])
+        self.inference_on = self.test_cfg.get(
+            "inference_on", self.submodules[0])
 
     def model(self, **kwargs) -> BaseDetector:
         if "submodule" in kwargs:

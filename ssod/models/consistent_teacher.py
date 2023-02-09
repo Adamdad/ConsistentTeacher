@@ -4,7 +4,6 @@ import numpy as np
 import torch
 from mmcv.runner.fp16_utils import force_fp32
 from mmdet.models import DETECTORS, build_detector
-
 from ssod.utils import log_every_n, log_image_with_boxes
 from ssod.utils.structure_utils import dict_split, weighted_loss
 
@@ -15,6 +14,7 @@ try:
     import sklearn.mixture as skm
 except ImportError:
     skm = None
+
 
 @DETECTORS.register_module()
 class ConsistentTeacher(MultiSteamDetector):
@@ -59,7 +59,8 @@ class ConsistentTeacher(MultiSteamDetector):
                                    for bbox in gt_bboxes]) / len(gt_bboxes)}
             )
             sup_loss = self.student.forward_train(**data_groups["sup"])
-            sup_loss['num_gts'] = torch.tensor(sum([len(b) for b in gt_bboxes]) / len(gt_bboxes)).to(gt_bboxes[0])
+            sup_loss['num_gts'] = torch.tensor(
+                sum([len(b) for b in gt_bboxes]) / len(gt_bboxes)).to(gt_bboxes[0])
             sup_loss = {"sup_" + k: v for k, v in sup_loss.items()}
             loss.update(**sup_loss)
         unsup_weight = self.unsup_weight
@@ -105,8 +106,9 @@ class ConsistentTeacher(MultiSteamDetector):
             )
         student_info = self.extract_student_info(**student_data)
 
-        losses= self.compute_pseudo_label_loss(student_info, teacher_info)
-        losses['gmm_thr'] = torch.tensor(teacher_info['gmm_thr']).to(teacher_data["img"].device)
+        losses = self.compute_pseudo_label_loss(student_info, teacher_info)
+        losses['gmm_thr'] = torch.tensor(
+            teacher_info['gmm_thr']).to(teacher_data["img"].device)
         return losses
 
     def compute_pseudo_label_loss(self, student_info, teacher_info):
@@ -237,7 +239,7 @@ class ConsistentTeacher(MultiSteamDetector):
                 gmm_scores[gmm_assignment == 0] = -np.inf
                 indx = np.argmax(gmm_scores, axis=0)
                 pos_indx = (gmm_assignment == 1) & (
-                        scores >= scores[indx]).squeeze()
+                    scores >= scores[indx]).squeeze()
                 pos_thr = float(scores[pos_indx].min())
                 pos_thr = max(given_gt_thr, pos_thr)
             else:
@@ -300,7 +302,8 @@ class ConsistentTeacher(MultiSteamDetector):
             label = int(label)
             scores_add = (scores[labels == label])
             num_buffers = len(self.scores[label])
-            scores_new= torch.cat([scores_add, self.scores[label]])[:num_buffers]
+            scores_new = torch.cat([scores_add, self.scores[label]])[
+                :num_buffers]
             self.scores[label] = scores_new
             thr = self.gmm_policy(
                 scores_new[scores_new > 0],

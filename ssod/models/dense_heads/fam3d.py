@@ -91,8 +91,10 @@ class FAM3DHead(ATSSHead):
         self.pyramid_mapping_module = nn.Sequential(
             nn.Conv2d(self.feat_channels * self.stacked_convs * 2,
                       self.feat_channels // self.offset_channel_shrink, 1), nn.ReLU(inplace=True))
-        self.reg_offset_module = nn.Conv2d(self.feat_channels // self.offset_channel_shrink * 3, 4 * 2, 3, padding=1)
-        self.pyramid_offset = nn.Conv2d(self.feat_channels // self.offset_channel_shrink * 3, 4, 3, padding=1)
+        self.reg_offset_module = nn.Conv2d(
+            self.feat_channels // self.offset_channel_shrink * 3, 4 * 2, 3, padding=1)
+        self.pyramid_offset = nn.Conv2d(
+            self.feat_channels // self.offset_channel_shrink * 3, 4, 3, padding=1)
 
         self.scales = nn.ModuleList(
             [Scale(1.0) for _ in self.prior_generator.strides])
@@ -646,7 +648,8 @@ class FAM3DHead(ATSSHead):
 
         # TODO: use point generator
         ct_priors = self.anchor_center(anchors)
-        strides = (anchors[..., 2:] - anchors[..., :2]) / 8  # octave_base_scale
+        strides = (anchors[..., 2:] - anchors[..., :2]) / \
+            8  # octave_base_scale
         ct_priors = torch.cat([ct_priors, strides], dim=-1)
 
         assign_result = self.alignment_assigner.assign(
@@ -671,7 +674,6 @@ class FAM3DHead(ATSSHead):
 
         pos_inds = sampling_result.pos_inds
         neg_inds = sampling_result.neg_inds
-
 
         if len(pos_inds) > 0:
             # point-based

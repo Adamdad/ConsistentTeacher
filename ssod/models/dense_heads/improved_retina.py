@@ -1,15 +1,14 @@
 # Copyright (c) OpenMMLab. All rights reserved.
-from numpy import isin
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule, Scale
 from mmcv.runner import force_fp32
-
-from mmdet.core.bbox.assigners import ATSSAssigner, MaxIoUAssigner
 from mmdet.core import (anchor_inside_flags, build_assigner, build_sampler,
                         images_to_levels, multi_apply, reduce_mean, unmap)
+from mmdet.core.bbox.assigners import ATSSAssigner, MaxIoUAssigner
 from mmdet.models import HEADS, build_loss
 from mmdet.models.dense_heads import AnchorHead
+from numpy import isin
 
 
 @HEADS.register_module()
@@ -174,7 +173,7 @@ class ImprovedRetinaHead(AnchorHead):
         # FG cat_id: [0, num_classes -1], BG cat_id: num_classes
         bg_class_ind = self.num_classes
         pos_inds = torch.nonzero(((labels >= 0)
-                    & (labels < bg_class_ind)), as_tuple=False).squeeze(1)
+                                  & (labels < bg_class_ind)), as_tuple=False).squeeze(1)
 
         if len(pos_inds) > 0:
             pos_bbox_targets = bbox_targets[pos_inds]

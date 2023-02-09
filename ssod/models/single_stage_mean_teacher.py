@@ -1,14 +1,15 @@
+from collections import OrderedDict
+
 import torch
 from mmcv.runner.fp16_utils import force_fp32
 from mmdet.core import bbox2roi, multi_apply
-from collections import OrderedDict
-from mmdet.models import DETECTORS, build_detector
 from mmdet.core.utils import reduce_mean
+from mmdet.models import DETECTORS, build_detector
+from ssod.utils import log_every_n, log_image_with_boxes
 from ssod.utils.structure_utils import dict_split, weighted_loss
-from ssod.utils import log_image_with_boxes, log_every_n
 
-from .utils import Transform2D, filter_invalid
 from .multi_stream_detector import MultiSteamDetector
+from .utils import Transform2D, filter_invalid
 
 
 @DETECTORS.register_module()
@@ -46,7 +47,8 @@ class SingleStageMeanTeacher(MultiSteamDetector):
                                    for bbox in gt_bboxes]) / len(gt_bboxes)}
             )
             sup_loss = self.student.forward_train(**data_groups["sup"])
-            sup_loss['num_gts'] = torch.tensor(sum([len(b) for b in gt_bboxes]) / len(gt_bboxes)).to(gt_bboxes[0])
+            sup_loss['num_gts'] = torch.tensor(
+                sum([len(b) for b in gt_bboxes]) / len(gt_bboxes)).to(gt_bboxes[0])
             sup_loss = {"sup_" + k: v for k, v in sup_loss.items()}
             loss.update(**sup_loss)
         if "unsup_student" in data_groups:
@@ -61,8 +63,10 @@ class SingleStageMeanTeacher(MultiSteamDetector):
 
         if self.train_cfg.get('collect_keys', None):
             # In case of only sup or unsup images
-            num_sup = len(data_groups["sup"]['img']) if 'sup' in data_groups else 0
-            num_unsup = len(data_groups['unsup_student']['img']) if 'unsup_student' in data_groups else 0
+            num_sup = len(data_groups["sup"]['img']
+                          ) if 'sup' in data_groups else 0
+            num_unsup = len(
+                data_groups['unsup_student']['img']) if 'unsup_student' in data_groups else 0
             num_sup = img.new_tensor(num_sup)
             avg_num_sup = reduce_mean(num_sup).clamp(min=1e-5)
             num_unsup = img.new_tensor(num_unsup)
@@ -271,4 +275,3 @@ class SingleStageMeanTeacher(MultiSteamDetector):
             unexpected_keys,
             error_msgs,
         )
-
