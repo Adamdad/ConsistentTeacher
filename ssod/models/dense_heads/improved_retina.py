@@ -174,7 +174,7 @@ class ImprovedRetinaHead(AnchorHead):
         # FG cat_id: [0, num_classes -1], BG cat_id: num_classes
         bg_class_ind = self.num_classes
         pos_inds = torch.nonzero(((labels >= 0)
-                    & (labels < bg_class_ind))).squeeze(1)
+                    & (labels < bg_class_ind)), as_tuple=False).squeeze(1)
 
         if len(pos_inds) > 0:
             pos_bbox_targets = bbox_targets[pos_inds]
