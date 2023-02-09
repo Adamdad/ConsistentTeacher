@@ -301,7 +301,7 @@ semi_wrapper = dict(
         num_scores=100,
         warmup_step=10000,
         min_pseduo_box_size=0,
-        unsup_weight=2.0,
+        unsup_weight=1.0,
     ),
     test_cfg=dict(inference_on="teacher"),
 )
@@ -316,7 +316,7 @@ evaluation = dict(type="SubModulesDistEvalHook", interval=4000)
 optimizer = dict(type="SGD", lr=0.01, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(
     _delete_=True, grad_clip=dict(max_norm=20, norm_type=2))
-lr_config = dict(step=[180000, 180000])
+lr_config = dict(step=[120000, 160000])
 runner = dict(_delete_=True, type="IterBasedRunner", max_iters=180000)
 checkpoint_config = dict(by_epoch=False, interval=4000, max_keep_ckpts=2)
 

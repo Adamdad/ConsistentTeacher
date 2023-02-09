@@ -80,12 +80,15 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 ## Usage
 
 ### Requirements
-- `Ubuntu 16.04`
-- `Anaconda3` with `python=3.6`
 - `Pytorch=1.9.0`
 - `mmdetection=2.25.0`
 - `mmcv=1.3.9`
 - `wandb=0.10.31`
+
+or 
+
+- `mmdetection=2.28.1`
+- `mmcv=1.7.1`
 
 #### Notes
 - We use [wandb](https://wandb.ai/) for visualization, if you don't want to use it, just comment line `273-284` in `configs/consistent-teacher/base.py`.
@@ -107,6 +110,8 @@ cd ConsistentTeacher/
 # YOUR_DATA should be a directory contains coco dataset.
 # For eg.:
 # YOUR_DATA/
+#  coco_semi/
+#     instances_train2017.${fold}@${percent}.json
 #  coco/
 #     train2017/
 #     val2017/
