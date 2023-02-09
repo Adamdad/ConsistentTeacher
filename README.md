@@ -91,10 +91,13 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 - We use [wandb](https://wandb.ai/) for visualization, if you don't want to use it, just comment line `273-284` in `configs/consistent-teacher/base.py`.
 
 ### Installation
-Install `mmdet` following [INSTALL](https://mmdetection.readthedocs.io/en/stable/get_started.html) and all the requirements, then
+Install all the requirements [INSTALL](https://mmdetection.readthedocs.io/en/stable/get_started.html), then git pull the `mmdetecton` repo and ConsistentTeacher under the same folder
 ```
-make install
+git clone https://github.com/open-mmlab/mmdetection.git
+git clone https://github.com/Adamdad/ConsistentTeacher.git
+cd ConsistentTeacher/
 ```
+
 
 ### Data Preparation
 #### COCO Dataset
