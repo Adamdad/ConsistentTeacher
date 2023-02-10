@@ -30,7 +30,7 @@ model = dict(
         in_channels=256,
         stacked_convs=4,
         feat_channels=256,
-        anchor_type='anchor_free',
+        anchor_type='anchor_based',
         anchor_generator=dict(
             type='AnchorGenerator',
             ratios=[1.0],
@@ -44,15 +44,13 @@ model = dict(
         loss_cls=dict(
             type='FocalLoss',
             use_sigmoid=True,
-            # activated=True,  # use probability instead of logit as input
+            activated=True,  # use probability instead of logit as input
             gamma=2.0,
             alpha=0.25,
             loss_weight=1.0),
-        loss_bbox=dict(type='GIoULoss', loss_weight=2.0)),
+        loss_bbox=dict(type='GIoULoss', loss_weight=1.0)),
     train_cfg=dict(
-        assigner=dict(type='DynamicSoftLabelAssigner', topk=13),
-        alpha=1,
-        beta=6,
+        assigner=dict(type='DynamicSoftLabelAssigner', topk=13, iou_factor=1),
         allowed_border=-1,
         pos_weight=-1,
         debug=False),
@@ -287,7 +285,7 @@ data = dict(
         train=dict(
             type="SemiBalanceSampler",
             sample_ratio=[1, 1],
-            by_prob=True,
+            by_prob=False,
             # at_least_one=True,
             epoch_length=7330,
         )
@@ -299,6 +297,7 @@ semi_wrapper = dict(
     model="${model}",
     train_cfg=dict(
         num_scores=100,
+        dynamic_ratio=1.0,
         warmup_step=10000,
         min_pseduo_box_size=0,
         unsup_weight=1.0,
@@ -313,7 +312,7 @@ custom_hooks = [
     dict(type="MeanTeacher", momentum=0.9995, interval=1, warm_up=0),
 ]
 evaluation = dict(type="SubModulesDistEvalHook", interval=4000)
-optimizer = dict(type="SGD", lr=0.01, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type="SGD", lr=0.005, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(
     _delete_=True, grad_clip=dict(max_norm=20, norm_type=2))
 lr_config = dict(step=[120000, 160000])

@@ -4,6 +4,7 @@ import numpy as np
 import torch
 from mmcv.runner.fp16_utils import force_fp32
 from mmdet.models import DETECTORS, build_detector
+from mmdet.core.utils import reduce_mean
 from ssod.utils import log_every_n, log_image_with_boxes
 from ssod.utils.structure_utils import dict_split, weighted_loss
 
@@ -78,6 +79,12 @@ class ConsistentTeacher(MultiSteamDetector):
 
         if self.train_cfg.get('collect_keys', None):
             # In case of only sup or unsup images
+            num_sup = len(data_groups["sup"]['img']) if 'sup' in data_groups else 0
+            num_unsup = len(data_groups['unsup_student']['img']) if 'unsup_student' in data_groups else 0
+            num_sup = img.new_tensor(num_sup)
+            avg_num_sup = reduce_mean(num_sup).clamp(min=1e-5)
+            num_unsup = img.new_tensor(num_unsup)
+            avg_num_unsup = reduce_mean(num_unsup).clamp(min=1e-5)
             collect_keys = self.train_cfg.collect_keys
             losses = OrderedDict()
             for k in collect_keys:
@@ -90,6 +97,11 @@ class ConsistentTeacher(MultiSteamDetector):
                 else:
                     losses[k] = img.new_tensor(0)
             loss = losses
+            for key in loss:
+                if key.startswith('sup_'):
+                    loss[key] = loss[key] * num_sup / avg_num_sup
+                elif key.startswith('unsup_'):
+                    loss[key] = loss[key] * num_unsup / avg_num_unsup
         return loss
 
     def foward_unsup_train(self, teacher_data, student_data):
@@ -103,6 +115,8 @@ class ConsistentTeacher(MultiSteamDetector):
                     torch.Tensor(tidx).to(teacher_data["img"].device).long()
                 ],
                 [teacher_data["img_metas"][idx] for idx in tidx],
+                gt_labels=[teacher_data['gt_labels'][idx] for idx in tidx],
+                gt_bboxes=[teacher_data['gt_bboxes'][idx] for idx in tidx],
             )
         student_info = self.extract_student_info(**student_data)
 
@@ -241,13 +255,13 @@ class ConsistentTeacher(MultiSteamDetector):
                 pos_indx = (gmm_assignment == 1) & (
                     scores >= scores[indx]).squeeze()
                 pos_thr = float(scores[pos_indx].min())
-                pos_thr = max(given_gt_thr, pos_thr)
+                # pos_thr = max(given_gt_thr, pos_thr)
             else:
                 pos_thr = given_gt_thr
         elif policy == 'middle':
             if (gmm_assignment == 1).any():
                 pos_thr = float(scores[gmm_assignment == 1].min())
-                pos_thr = max(given_gt_thr, pos_thr)
+                # pos_thr = max(given_gt_thr, pos_thr)
             else:
                 pos_thr = given_gt_thr
 
@@ -270,12 +284,14 @@ class ConsistentTeacher(MultiSteamDetector):
                                for p in proposal_label_list]
         thrs = []
         for i, proposals in enumerate(proposal_list):
+            dynamic_ratio = self.train_cfg.dynamic_ratio
             scores = proposals[:, 4].clone()
             scores = scores.sort(descending=True)[0]
             if len(scores) == 0:
                 thrs.append(1)  # no kept pseudo boxes
             else:
-                num_gt = int(scores.sum() + 0.5)
+                # num_gt = int(scores.sum() + 0.5)
+                num_gt = int(scores.sum() * dynamic_ratio + 0.5)
                 num_gt = min(num_gt, len(scores) - 1)
                 thrs.append(scores[num_gt] - 1e-5)
         # filter invalid box roughly
@@ -302,12 +318,12 @@ class ConsistentTeacher(MultiSteamDetector):
             label = int(label)
             scores_add = (scores[labels == label])
             num_buffers = len(self.scores[label])
-            scores_new = torch.cat([scores_add, self.scores[label]])[
-                :num_buffers]
+            # scores_new = torch.cat([scores_add, self.scores[label]])[:num_buffers]
+            scores_new= torch.cat([scores_add.float(), self.scores[label].float()])[:num_buffers]
             self.scores[label] = scores_new
             thr = self.gmm_policy(
                 scores_new[scores_new > 0],
-                given_gt_thr=0,
+                given_gt_thr=self.train_cfg.get('given_gt_thr', 0),
                 policy=self.train_cfg.get('policy', 'high'))
             thrs[labels == label] = thr
         mean_thr = thrs.mean()
