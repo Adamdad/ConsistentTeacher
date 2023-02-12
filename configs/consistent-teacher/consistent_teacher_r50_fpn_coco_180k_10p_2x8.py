@@ -51,6 +51,8 @@ model = dict(
         loss_bbox=dict(type='GIoULoss', loss_weight=1.0)),
     train_cfg=dict(
         assigner=dict(type='DynamicSoftLabelAssigner', topk=13, iou_factor=1),
+        alpha=1,
+        beta=6,
         allowed_border=-1,
         pos_weight=-1,
         debug=False),
