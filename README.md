@@ -22,8 +22,8 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | mAP| config| 
 |---- | ----| ----
-| MeanTeacher 5x8 | 35.50 | [config](configs/baseline/mean_teacher_retinanet_r50_fpn_coco_180k_10p.py)|
-| ConsistentTeacher 5x8 | 40.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
+| MeanTeacher | 35.50 | [config](configs/baseline/mean_teacher_retinanet_r50_fpn_coco_180k_10p.py)|
+| ConsistentTeacher | 40.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
 | ConsistentTeacher 2x8 | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py) [wandb](https://wandb.ai/yangxingyi/consistent-teacher/runs/2qoa5ws3) |
 
 **MS-COCO100% Labeled + Unlabeled Data**
@@ -76,7 +76,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 ```
 ### Notes
-- All models are trained on 8*V100 GPUs with 5 images per GPU.
+- Defaultly, all models are trained on 8*V100 GPUs with 5 images per GPU.
 
 ## Usage
 
