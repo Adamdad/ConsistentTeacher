@@ -30,7 +30,7 @@ model = dict(
         in_channels=256,
         stacked_convs=4,
         feat_channels=256,
-        anchor_type='anchor_free',
+        anchor_type='anchor_based',
         anchor_generator=dict(
             type='AnchorGenerator',
             ratios=[1.0],
@@ -50,7 +50,7 @@ model = dict(
             loss_weight=1.0),
         loss_bbox=dict(type='GIoULoss', loss_weight=2.0)),
     train_cfg=dict(
-        assigner=dict(type='DynamicSoftLabelAssigner', topk=13),
+        assigner=dict(type='DynamicSoftLabelAssigner', topk=13, iou_factor=2.0),
         alpha=1,
         beta=6,
         allowed_border=-1,
@@ -299,6 +299,7 @@ semi_wrapper = dict(
     model="${model}",
     train_cfg=dict(
         num_scores=100,
+        dynamic_ratio=1.0,
         warmup_step=10000,
         min_pseduo_box_size=0,
         unsup_weight=2.0,
