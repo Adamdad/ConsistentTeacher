@@ -164,7 +164,7 @@ tar -xf STAC_JSON.tar.gz
 @article{wang2023consistent,
     author    = {Xinjiang Wang, Xingyi Yang, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang },
     title     = {Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection},
-    journal   = {arxiv},
+    journal   = {The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR)},
     year      = {2023},
 }
 ```
