@@ -1,10 +1,8 @@
-_base_ = 'consistent_teacher_r50_fpn_coco_180k_10p.py'
+_base_ = './consistent_teacher_r50_fpn_coco_180k_10p.py'
 
 fold = 1
-percent = 10
+percent = 5
 data = dict(
-    samples_per_gpu=2,
-    workers_per_gpu=2,
     train=dict(
         sup=dict(
             ann_file="data/coco_semi/semi_supervised/instances_train2017.${fold}@${percent}.json",
@@ -15,22 +13,8 @@ data = dict(
     ),
 )
 
-semi_wrapper = dict(
-    train_cfg=dict(
-        unsup_weight=1.0,
-    ),
-)
-
-custom_hooks = [
-    dict(type="NumClassCheckHook"),
-    dict(type="WeightSummary"),
-    dict(type='SetIterInfoHook'),
-    dict(type="MeanTeacher", momentum=0.9998, interval=1, warm_up=0),
-]
-
-optimizer = dict(type="SGD", lr=0.005, momentum=0.9, weight_decay=0.0001)
-
 log_config = dict(
+    _delete_=True,
     interval=50,
     hooks=[
         dict(type="TextLoggerHook", by_epoch=False),

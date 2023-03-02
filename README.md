@@ -14,29 +14,35 @@ This repository contains the offical implementation for our CVPR-2023 paper
 
 Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang 
 
+
+> In this paper, we systematically investigate the inconsistency problems in semi-supervised object detection, where the pseudo boxes may be highly inaccurate and vary greatly at different stages of training. To alleviate the aforementioned problem, we present a holistic semi-supervised object detector termed Consistent-Teacher. Consistent-Teacher achieves compelling improvement on a wide range of evaluations and serves as a new solid baseline for SSOD.
+
+
 ![](assets/pipeline.jpg)
 
 ## Main Results
 
-**MS-COCO 10% Labeled Data**
+**MS-COCO 1%/2%/5/%/10% Labeled Data**
 
-| Method | mAP| config| 
-|---- | ----| ----
-| MeanTeacher | 35.50 | [config](configs/baseline/mean_teacher_retinanet_r50_fpn_coco_180k_10p.py)|
-| ConsistentTeacher | 40.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
-| ConsistentTeacher 2x8 | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py) [wandb](https://wandb.ai/yangxingyi/consistent-teacher/runs/2qoa5ws3) |
+| Method | Data | mAP| config| 
+|---- | --- |----| ---- |
+| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py)|
+| ConsistentTeacher | MS-COCO 2% | - | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py)|
+| ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py)|
+| ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
+| ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py) [wandb](https://wandb.ai/yangxingyi/consistent-teacher/runs/2qoa5ws3) |
+| ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py) |
 
 **MS-COCO100% Labeled + Unlabeled Data**
 
 | Method | mAP| config| 
 |---- | ----| ----
-| ConsistentTeacher 5x8 | 47.70 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|
+| ConsistentTeacher 5x8 | 48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|
 
 **PASCAL VOC07 Label + VOC12 Unlabel**
 
 | Method | mAP| AP50| config| 
 |---- | ----| ---- | ---- |
-| MeanTeacher | 53.61 | 77.02 |[config](configs/baseline/mean_teacher_retinanet_r50_fpn_voc0712_72k.py)|
 | ConsistentTeacher | 59.00 | 81.00 |  [config](configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py)|
 
 ## File Orgnizations

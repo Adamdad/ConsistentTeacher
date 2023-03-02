@@ -287,7 +287,7 @@ data = dict(
         train=dict(
             type="SemiBalanceSampler",
             sample_ratio=[1, 4],
-            by_prob=True,
+            by_prob=False,
             # at_least_one=True,
             epoch_length=7330,
         )
