@@ -50,39 +50,36 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 ```
 ├── configs              
     ├── baseline
-        |-- mean_teacher_retinanet_r50_fpn_coco_180k_10p.py       
-        |   # Mean Teacher COCO 10% config
-        |-- mean_teacher_retinanet_r50_fpn_voc0712_72k.py      
-            # Mean Teacher VOC0712 config
-
+    │   |-- mean_teacher_retinanet_r50_fpn_coco_180k_10p.py       
+    |       # Mean Teacher COCO 10% config
+    |   |-- mean_teacher_retinanet_r50_fpn_voc0712_72k.py      
+    |       # Mean Teacher VOC0712 config
     ├── consistent-teacher
-        |-- consistent_teacher_r50_fpn_coco_360k_fulldata.py           
-            # Consistent Teacher COCO label+unlabel config
-        |-- consistent_teacher_r50_fpn_coco_180k_1/2/5/10p.py           
-            # Consistent Teacher COCO 1%/2%/5%/10% config
-        |-- consistent_teacher_r50_fpn_coco_180k_10p_2x8.py     
-            # Consistent Teacher COCO 10% config with 8x2 GPU
-        |-- consistent_teacher_r50_fpn_voc0712_72k.py             
-            # Consistent Teacher VOC0712 config
-
-
+    |   |-- consistent_teacher_r50_fpn_coco_360k_fulldata.py           
+    |       # Consistent Teacher COCO label+unlabel config
+    |
+    |   |-- consistent_teacher_r50_fpn_coco_180k_1/2/5/10p.py           
+    |       # Consistent Teacher COCO 1%/2%/5%/10% config
+    |   |-- consistent_teacher_r50_fpn_coco_180k_10p_2x8.py     
+    |       # Consistent Teacher COCO 10% config with 8x2 GPU
+    |   |-- consistent_teacher_r50_fpn_voc0712_72k.py             
+    |       # Consistent Teacher VOC0712 config
 ├── ssod
     |-- models/mean_teacher.py                           
-        # Consistent Teacher Class file
+    |   # Consistent Teacher Class file
     |-- models/consistent_teacher.py                     
-        # Consistent Teacher Class file
+    |   # Consistent Teacher Class file
     |-- models/dense_heads/fam3d.py                      
-        # FAM-3D Class file
+    |   # FAM-3D Class file
     |-- models/dense_heads/improved_retinanet.py                      
-        #  ImprovedRetinaNet baseline file
+    |   # ImprovedRetinaNet baseline file
     |-- core/bbox/assigners/dynamic_assigner.py
-    # Aadaptive Sample Assignment Class file
-
+    |   # Aadaptive Sample Assignment Class file
 ├── tools
     |-- dataset/semi_coco.py
-      # COCO data preprocessing
+    |   # COCO data preprocessing
     |-- train.py/test.py
-      # Main file for train and evaluate the models
+    |   # Main file for train and evaluate the models
 
 ```
 ### Notes
