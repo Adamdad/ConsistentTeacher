@@ -160,7 +160,7 @@ tar -xf STAC_JSON.tar.gz
 
 ## License
 
-This project is released under the (Apache 2.0 license)[LICENCE].
+This project is released under the [Apache 2.0 license](LICENCE).
 
 ## Citation
 
