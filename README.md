@@ -7,6 +7,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-1)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-1?p=consistent-teacher-provides-better-1)
 
 This repository contains the offical implementation for our CVPR-2023 paper. 
+
 ✨We are now able to train detector on 10% MS-COCO to 40 mAP✨
 
 **Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection**
