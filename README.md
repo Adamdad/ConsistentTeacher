@@ -26,7 +26,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | Data | mAP| config| 
 |---- | --- |----| ---- |
-| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py)|
+| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py) [log](https://drive.google.com/file/d/1uxGFRCqPTILrGLDzoT2-tjuvZ-cEbGAd/view?usp=share_link)
 | ConsistentTeacher | MS-COCO 2% | - | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py)|
 | ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py)|
 | ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
