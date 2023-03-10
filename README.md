@@ -1,4 +1,4 @@
-# Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection
+# 🧑‍🏫 Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection 🧑‍🏫
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-100)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-100?p=consistent-teacher-provides-better-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-10)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-10?p=consistent-teacher-provides-better-1)
@@ -6,7 +6,8 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-5)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-5?p=consistent-teacher-provides-better-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/consistent-teacher-provides-better-1/semi-supervised-object-detection-on-coco-1)](https://paperswithcode.com/sota/semi-supervised-object-detection-on-coco-1?p=consistent-teacher-provides-better-1)
 
-This repository contains the offical implementation for our CVPR-2023 paper
+This repository contains the offical implementation for our CVPR-2023 paper. 
+✨We are now able to train detector on 10% MS-COCO to 40 mAP✨
 
 **Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection**
 
@@ -26,18 +27,18 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | Data | mAP| config| Google Drive | Baidu Drive
 |---- | --- |----| ---- | -----| ----|
-| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py) | [log](https://drive.google.com/file/d/1uxGFRCqPTILrGLDzoT2-tjuvZ-cEbGAd/view?usp=share_link)
-| ConsistentTeacher | MS-COCO 2% | 30.70 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py) | [log](https://drive.google.com/file/d/1Q_1bphDNvwIXO2BYOoc-od7-RskYRgrM/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1uWKXvKyAlKaRqS_zOHGh4MCNFqXN2I0r/view?usp=share_link)|
-| ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py) | [log](https://drive.google.com/file/d/1aB7p0qWHaUo8gZDqq1Aj2NJnMFYvrrG0/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1KmoqCLui_QfCiyM2PC1FWenF1wXzwwHq/view?usp=share_link)|
-| ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)| [log](https://drive.google.com/file/d/1JHIJUqnQF-NEcVlZq7NhbBn55ShZpOjC/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1z7NmpUXYaqDHTkfpFgXWyz6RMKqx96kD/view?usp=share_link)|
-| ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py)|[log](https://drive.google.com/file/d/1dJsNrVrxPjSUNtWpUnquQ9DcCKP8jtSy/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1IrvqHg-CRaAOgB_cY0qUpXGHGx-4_uT7/view?usp=share_link) |
-| ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py)|[log](https://drive.google.com/file/d/1_i0RcKSwnDubq4MQa13K_E5-hkbkCq0G/view?usp=share_link) |
+| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py) | [log](https://drive.google.com/file/d/1uxGFRCqPTILrGLDzoT2-tjuvZ-cEbGAd/view?usp=share_link) | [log](https://pan.baidu.com/s/1iJlIgiD2K_jGoHff6UCSjA?pwd=gyex)
+| ConsistentTeacher | MS-COCO 2% | 30.70 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py) | [log](https://drive.google.com/file/d/1Q_1bphDNvwIXO2BYOoc-od7-RskYRgrM/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1uWKXvKyAlKaRqS_zOHGh4MCNFqXN2I0r/view?usp=share_link)| [log](https://pan.baidu.com/s/1vilhESSszMte8d_06Ok7aQ?pwd=se3y)/[ckpt](https://pan.baidu.com/s/19H4VtiiprBbYe9nqWzFYjw?pwd=x9rw)
+| ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py) | [log](https://drive.google.com/file/d/1aB7p0qWHaUo8gZDqq1Aj2NJnMFYvrrG0/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1KmoqCLui_QfCiyM2PC1FWenF1wXzwwHq/view?usp=share_link)| [log](https://pan.baidu.com/s/1akJTh7_DOHf2nQHV6UgZoA?pwd=mg98)/[ckpt](https://pan.baidu.com/s/1A9TnfFhCyB5GzCbAlCOfHg?pwd=y6x3)
+| ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)| [log](https://drive.google.com/file/d/1JHIJUqnQF-NEcVlZq7NhbBn55ShZpOjC/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1z7NmpUXYaqDHTkfpFgXWyz6RMKqx96kD/view?usp=share_link)|[log](https://pan.baidu.com/s/1ClexLVpVd_PJJRBKutRQuQ?pwd=mwb8)/[ckpt](https://pan.baidu.com/s/15og5Nqa7xJDeFORBxEf05w?pwd=mevh)|
+| ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py)|[log](https://drive.google.com/file/d/1dJsNrVrxPjSUNtWpUnquQ9DcCKP8jtSy/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1IrvqHg-CRaAOgB_cY0qUpXGHGx-4_uT7/view?usp=share_link) | [log](https://pan.baidu.com/s/1r24ciDb1pZL5DpA5gEe9ew?pwd=k6pn)/[ckpt](https://pan.baidu.com/s/1OW9VXYgdAiA7ao6uDV9IoQ?pwd=ybxn)
+| ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py)|[log](https://drive.google.com/file/d/1_i0RcKSwnDubq4MQa13K_E5-hkbkCq0G/view?usp=share_link) | [log](https://pan.baidu.com/s/1dOZdMjMdrrHQ4l-SZbPa_A?pwd=3pi4)
 
 **MS-COCO100% Labeled + Unlabeled Data**
 
 | Method | Data | mAP| config| Google Drive | Baidu Drive
 |---- | ----| ---- |-----| ----| -----|
-| ConsistentTeacher 5x8 | MS-COCO 100% + MS-COCO unlabeled |48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|[log](https://drive.google.com/file/d/12-4CKRBigOa7T4vaQRYznm5PfxtuiOBU/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1d3BUx6NrarkcTtWoK4O6OAxr1DYW-hse/view?usp=share_link)|
+| ConsistentTeacher 5x8 | MS-COCO 100% + MS-COCO unlabeled |48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|[log](https://drive.google.com/file/d/12-4CKRBigOa7T4vaQRYznm5PfxtuiOBU/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1d3BUx6NrarkcTtWoK4O6OAxr1DYW-hse/view?usp=share_link)| [log](https://pan.baidu.com/s/18Uly6NyujoZU1GYJtxcK7g?pwd=s7td)/[ckpt](https://pan.baidu.com/s/1D7FxZQY33woNXtpq_CnzpQ?pwd=nws3)
 
 **PASCAL VOC07 Label + VOC12 Unlabel**
 
