@@ -37,7 +37,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | mAP| config| 
 |---- | ----| ----
-| ConsistentTeacher 5x8 | 48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|
+| ConsistentTeacher 5x8 | 48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)/[log](https://drive.google.com/file/d/12-4CKRBigOa7T4vaQRYznm5PfxtuiOBU/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1d3BUx6NrarkcTtWoK4O6OAxr1DYW-hse/view?usp=share_link)|
 
 **PASCAL VOC07 Label + VOC12 Unlabel**
 
