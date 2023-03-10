@@ -23,6 +23,7 @@ def process_checkpoint(in_file, out_file):
     # add the code here.
     if 'meta' in checkpoint:
         del checkpoint['meta']
+        
     if torch.__version__ >= '1.6':
         torch.save(checkpoint, out_file, _use_new_zipfile_serialization=False)
     else:
