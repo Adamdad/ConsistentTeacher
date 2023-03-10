@@ -109,6 +109,7 @@ Install all the requirements [INSTALL](https://mmdetection.readthedocs.io/en/sta
 git clone https://github.com/open-mmlab/mmdetection.git
 git clone https://github.com/Adamdad/ConsistentTeacher.git
 cd ConsistentTeacher/
+pip install -e .
 ```
 
 
