@@ -31,7 +31,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 | ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py)/[log](https://drive.google.com/file/d/1aB7p0qWHaUo8gZDqq1Aj2NJnMFYvrrG0/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1KmoqCLui_QfCiyM2PC1FWenF1wXzwwHq/view?usp=share_link)|
 | ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)/[log](https://drive.google.com/file/d/1JHIJUqnQF-NEcVlZq7NhbBn55ShZpOjC/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1z7NmpUXYaqDHTkfpFgXWyz6RMKqx96kD/view?usp=share_link)|
 | ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py)/[log](https://drive.google.com/file/d/1dJsNrVrxPjSUNtWpUnquQ9DcCKP8jtSy/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1IrvqHg-CRaAOgB_cY0qUpXGHGx-4_uT7/view?usp=share_link) |
-| ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py) |
+| ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py)/[log](https://drive.google.com/file/d/1_i0RcKSwnDubq4MQa13K_E5-hkbkCq0G/view?usp=share_link) |
 
 **MS-COCO100% Labeled + Unlabeled Data**
 
