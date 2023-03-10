@@ -26,11 +26,11 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | Data | mAP| config| 
 |---- | --- |----| ---- |
-| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py) [log](https://drive.google.com/file/d/1uxGFRCqPTILrGLDzoT2-tjuvZ-cEbGAd/view?usp=share_link)
-| ConsistentTeacher | MS-COCO 2% | 30.7 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py) [log](https://drive.google.com/file/d/1Q_1bphDNvwIXO2BYOoc-od7-RskYRgrM/view?usp=share_link) [ckpt]()|
-| ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py)|
+| ConsistentTeacher | MS-COCO 1% | 25.50 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_1p.py)/[log](https://drive.google.com/file/d/1uxGFRCqPTILrGLDzoT2-tjuvZ-cEbGAd/view?usp=share_link)
+| ConsistentTeacher | MS-COCO 2% | 30.7 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_2p.py)/[log](https://drive.google.com/file/d/1Q_1bphDNvwIXO2BYOoc-od7-RskYRgrM/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1uWKXvKyAlKaRqS_zOHGh4MCNFqXN2I0r/view?usp=share_link)|
+| ConsistentTeacher | MS-COCO 5% | 36.60 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_5p.py)/[log](https://drive.google.com/file/d/1aB7p0qWHaUo8gZDqq1Aj2NJnMFYvrrG0/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1KmoqCLui_QfCiyM2PC1FWenF1wXzwwHq/view?usp=share_link)|
 | ConsistentTeacher | MS-COCO 10% | 40.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py)|
-| ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py) [wandb](https://wandb.ai/yangxingyi/consistent-teacher/runs/2qoa5ws3) |
+| ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py)/[log](https://drive.google.com/file/d/1dJsNrVrxPjSUNtWpUnquQ9DcCKP8jtSy/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1IrvqHg-CRaAOgB_cY0qUpXGHGx-4_uT7/view?usp=share_link) |
 | ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py) |
 
 **MS-COCO100% Labeled + Unlabeled Data**
