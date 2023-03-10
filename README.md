@@ -38,7 +38,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 
 | Method | Data | mAP| config| Google Drive | Baidu Drive
 |---- | ----| ---- |-----| ----| -----|
-| ConsistentTeacher 5x8 | MS-COCO 100% + MS-COCO unlabeled |48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|[log](https://drive.google.com/file/d/12-4CKRBigOa7T4vaQRYznm5PfxtuiOBU/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1d3BUx6NrarkcTtWoK4O6OAxr1DYW-hse/view?usp=share_link)| [log](https://pan.baidu.com/s/18Uly6NyujoZU1GYJtxcK7g?pwd=s7td)/[ckpt](https://pan.baidu.com/s/1D7FxZQY33woNXtpq_CnzpQ?pwd=nws3)
+| ConsistentTeacher 5x8 | MS-COCO 100% + unlabeled |48.20 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_360k_fulldata.py)|[log](https://drive.google.com/file/d/12-4CKRBigOa7T4vaQRYznm5PfxtuiOBU/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1d3BUx6NrarkcTtWoK4O6OAxr1DYW-hse/view?usp=share_link)| [log](https://pan.baidu.com/s/18Uly6NyujoZU1GYJtxcK7g?pwd=s7td)/[ckpt](https://pan.baidu.com/s/1D7FxZQY33woNXtpq_CnzpQ?pwd=nws3)
 
 **PASCAL VOC07 Label + VOC12 Unlabel**
 
