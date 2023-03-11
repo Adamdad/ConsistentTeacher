@@ -7,7 +7,7 @@ from mmcv.runner import load_checkpoint
 
 config_name = 'configs/consistent-teacher/consistent_teacher_r50_fpn_coco_720k_fulldata.py'
 checkpoint = '../ckpt_logs/ConsistentTeacher/consistent_teacher_r50_fpn_coco_720k_fulldata/consistent_teacher_r50_fpn_coco_720k_fulldata_iter_720000-d932808f.pth'
-img = mmcv.imread('assets/492060815_ec07c64c09_z.jpg')
+img = mmcv.imread('assets/13635702854_d31e5808a5_o.jpg')
 
 model = init_detector(config_name, checkpoint=None, device='cpu')
 checkpoint = load_checkpoint(model, checkpoint, revise_keys=[(r'^teacher\.', '')])

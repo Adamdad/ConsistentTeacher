@@ -45,6 +45,20 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 |---- | ----| ---- | ---- |
 | ConsistentTeacher | 59.00 | 81.00 |  [config](configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py)|
 
+## Visualizations
+
+| **Zero-shot on KITTI** | 
+|-----|
+![kitti1](assets/0000000000_results.png) | 
+ ![kitti2](assets/0000000004_results.png)|
+
+
+| **Zero-shot on openImages** |  |
+|-----|-----|
+![Openimage1](assets/13635702854_d31e5808a5_o_result.png) |  ![Openimage2](assets/15678203979_9e85a3f42e_o_results.png)
+
+
+
 ## File Orgnizations
 
 ```
