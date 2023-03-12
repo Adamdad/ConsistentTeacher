@@ -16,6 +16,8 @@ This repository contains the offical implementation for our CVPR-2023 paper.
 
 Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang 
 
+(*: Co-first Author)
+
 
 > In this paper, we systematically investigate the inconsistency problems in semi-supervised object detection, where the pseudo boxes may be highly inaccurate and vary greatly at different stages of training. To alleviate the aforementioned problem, we present a holistic semi-supervised object detector termed Consistent-Teacher. Consistent-Teacher achieves compelling improvement on a wide range of evaluations and serves as a new solid baseline for SSOD.
 
