@@ -12,7 +12,7 @@ This repository contains the offical implementation for our CVPR-2023 paper.
 
 **Consistent-Teacher: Towards Reducing Inconsistent Pseudo-targets in Semi-supervised Object Detection**
 
-[[arxiv](https://arxiv.org/abs/2209.01589)] [[code](https://github.com/Adamdad/ConsistentTeacher)]
+[[arxiv](https://arxiv.org/abs/2209.01589)] [[code](https://github.com/Adamdad/ConsistentTeacher)] [[project page](https://adamdad.github.io/consistentteacher/)]
 
 Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fang, Chengqi Lyu, Kai Chen, Wayne Zhang 
 
@@ -23,6 +23,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 ![](assets/pipeline.jpg)
 
 ## Main Results
+All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 
 **MS-COCO 1%/2%/5/%/10% Labeled Data**
 
@@ -100,6 +101,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 ```
 ### Notes
 - Defaultly, all models are trained on 8*V100 GPUs with 5 images per GPU.
+- Additionally, we support the `2x8` and `fp16` training setting to ensure everyone is able to run the code, even with only 12G graphic cards. 
 
 ## Usage
 
@@ -147,6 +149,19 @@ bash tools/dataset/prepare_coco_data.sh conduct
 
 ```
 For concrete instructions of what should be downloaded, please refer to `tools/dataset/prepare_coco_data.sh` line [`11-24`](https://github.com/microsoft/SoftTeacher/blob/863d90a3aa98615be3d156e7d305a22c2a5075f5/tools/dataset/prepare_coco_data.sh#L11)
+
+#### VOC0712 Dataset
+- Download JSON files for unlabeled images PASCAL VOC data in COCO format
+```
+cd ${DATAROOT}
+
+wget https://storage.cloud.google.com/gresearch/ssl_detection/STAC_JSON.tar
+tar -xf STAC_JSON.tar.gz
+# voc/VOCdevkit/VOC2007/instances_test.json
+# voc/VOCdevkit/VOC2007/instances_trainval.json
+# voc/VOCdevkit/VOC2012/instances_trainval.json
+```
+
 ### Training
 
 - To train model on the **partial labeled data** and **full labeled data** setting:
@@ -164,17 +179,11 @@ bash tools/dist_train.sh configs/consistent-teacher/consistent_teacher_r50_fpn_c
 
 The core idea is to convert a new dataset to coco format. Details about it can be found in the [adding new dataset](https://github.com/open-mmlab/mmdetection/blob/master/docs/tutorials/customize_dataset.md).
 
-#### VOC0712 Dataset
-- Download JSON files for unlabeled images PASCAL VOC data in COCO format
-```
-cd ${DATAROOT}
+### Inference and Demo
+- To inference with the pretrained models on images and videos and plot the bounding boxes, we add two scripts
+  - `tools/inference.py` for image inference 
+  - `tools/inference_vido.py` for video inference
 
-wget https://storage.cloud.google.com/gresearch/ssl_detection/STAC_JSON.tar
-tar -xf STAC_JSON.tar.gz
-# voc/VOCdevkit/VOC2007/instances_test.json
-# voc/VOCdevkit/VOC2007/instances_trainval.json
-# voc/VOCdevkit/VOC2012/instances_trainval.json
-```
 
 ## License
 
