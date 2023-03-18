@@ -304,12 +304,14 @@ semi_wrapper = dict(
     model="${model}",
     train_cfg=dict(
         num_scores=100,
+        dynamic_ratio=1.0,
         warmup_step=1000,
         min_pseduo_box_size=0,
         unsup_weight=2.0,
     ),
     test_cfg=dict(inference_on="teacher"),
 )
+
 
 custom_hooks = [
     dict(type="NumClassCheckHook"),
