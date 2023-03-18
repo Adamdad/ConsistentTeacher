@@ -201,3 +201,6 @@ This project is released under the [Apache 2.0 license](LICENCE).
     year      = {2023},
 }
 ```
+
+## Acknowledgement
+1. This code pattern was inspired from a [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [mmdet](https://github.com/open-mmlab/mmdetection)
