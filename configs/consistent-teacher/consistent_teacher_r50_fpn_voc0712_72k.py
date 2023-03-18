@@ -30,7 +30,7 @@ model = dict(
         in_channels=256,
         stacked_convs=4,
         feat_channels=256,
-        anchor_type='anchor_free',
+        anchor_type='anchor_based',
         anchor_generator=dict(
             type='AnchorGenerator',
             ratios=[1.0],
@@ -44,13 +44,13 @@ model = dict(
         loss_cls=dict(
             type='FocalLoss',
             use_sigmoid=True,
-            # activated=True,  # use probability instead of logit as input
+            activated=True,  # use probability instead of logit as input
             gamma=2.0,
             alpha=0.25,
             loss_weight=1.0),
         loss_bbox=dict(type='GIoULoss', loss_weight=2.0)),
     train_cfg=dict(
-        assigner=dict(type='DynamicSoftLabelAssigner', topk=13),
+        assigner=dict(type='DynamicSoftLabelAssigner', topk=13, iou_factor=2.0),
         alpha=1,
         beta=6,
         allowed_border=-1,
