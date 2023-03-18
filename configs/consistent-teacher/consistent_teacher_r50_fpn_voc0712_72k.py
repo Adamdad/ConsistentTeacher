@@ -262,14 +262,14 @@ data = dict(
         type="SemiDataset",
         sup=dict(
             type="CocoDataset",
-            ann_file="data/VOC2007/instances_trainval.json",
+            ann_file="data/VOCdevkit/VOC2007/instances_trainval.json",
             img_prefix="data/VOCdevkit/VOC2007/JPEGImages",
             pipeline=train_pipeline,
             classes=CLASSES,
         ),
         unsup=dict(
             type="CocoDataset",
-            ann_file="data/VOC2012/instances_trainval.json",
+            ann_file="data/VOCdevkit/VOC2012/instances_trainval.json",
             img_prefix="data/VOCdevkit/VOC2012/JPEGImages",
             pipeline=unsup_pipeline,
             classes=CLASSES,
