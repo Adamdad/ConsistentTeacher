@@ -3,8 +3,10 @@ import torch
 from mmcv.runner.fp16_utils import force_fp32
 from mmdet.core import bbox2roi, multi_apply
 from mmdet.models import DETECTORS, build_detector
-from ssod.utils import log_every_n, log_image_with_boxes
-from ssod.utils.structure_utils import dict_split, weighted_loss
+# from ssod.utils import log_every_n, log_image_with_boxes
+# from ssod.utils.structure_utils import dict_split, weighted_loss
+from ..utils import log_every_n, log_image_with_boxes
+from ..utils.structure_utils import dict_split, weighted_loss
 
 from .multi_stream_detector import MultiSteamDetector
 from .utils import Transform2D, filter_invalid
