@@ -336,8 +336,8 @@ log_config = dict(
                 project="consistent-teacher",
                 name="${cfg_name}",
                 config=dict(
-                    fold="${fold}",
-                    percent="${percent}",
+                    # fold="${fold}",
+                    # percent="${percent}",
                     work_dirs="${work_dir}",
                     total_step="${runner.max_iters}",
                 ),
