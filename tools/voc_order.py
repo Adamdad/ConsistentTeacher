@@ -19,13 +19,10 @@ data = [{"supercategory": "none", "id": 9, "name": "train"},
  {"supercategory": "none", "id": 1, "name": "motorbike"}, 
  {"supercategory": "none", "id": 2, "name": "dog"}]
 
-order_dict = dict()
+order_dict = []
 for item in data:
-    order_dict[item["id"]] = item["name"]
+    order_dict.append(item["name"])
 
 print(order_dict)
 
-myKeys = list(order_dict.keys())
-myKeys.sort()
-sorted_name = [order_dict[i] for i in myKeys]
-print(myKeys, sorted_name)
+
