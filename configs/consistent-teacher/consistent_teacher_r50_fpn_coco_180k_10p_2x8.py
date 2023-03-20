@@ -13,6 +13,15 @@ data = dict(
             ann_file="data/coco_semi/semi_supervised/instances_train2017.${fold}@${percent}-unlabeled.json",
         ),
     ),
+    sampler=dict(
+        train=dict(
+            type="SemiBalanceSampler",
+            sample_ratio=[1, 1],
+            by_prob=False,
+            # at_least_one=True,
+            epoch_length=7330,
+        )
+    ),
 )
 
 semi_wrapper = dict(
