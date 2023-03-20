@@ -27,6 +27,7 @@ Xinjiang Wang*, Xingyi Yang*, Shilong Zhang, Yijiang Li, Litong Feng, Shijie Fan
 ## Main Results
 All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 
+
 **MS-COCO 1%/2%/5/%/10% Labeled Data**
 
 | Method | Data | mAP| config| Links | Google Drive | Baidu Drive
@@ -38,6 +39,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 | ConsistentTeacher 2x8 | MS-COCO 10% | 38.00 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8.py)| [log](https://github.com/Adamdad/ConsistentTeacher/releases/download/v1.0.0/consistent_teacher_r50_fpn_coco_180k_10p_2x8.json)/[ckpt](https://github.com/Adamdad/ConsistentTeacher/releases/download/v1.0.0/consistent_teacher_r50_fpn_coco_180k_10p_2x8_iter_180000-03e55f57.pth) | [log](https://drive.google.com/file/d/1dJsNrVrxPjSUNtWpUnquQ9DcCKP8jtSy/view?usp=share_link)/[ckpt](https://drive.google.com/file/d/1IrvqHg-CRaAOgB_cY0qUpXGHGx-4_uT7/view?usp=share_link) | [log](https://pan.baidu.com/s/1r24ciDb1pZL5DpA5gEe9ew?pwd=k6pn)/[ckpt](https://pan.baidu.com/s/1OW9VXYgdAiA7ao6uDV9IoQ?pwd=ybxn)
 | ConsistentTeacher 2x8 (FP16)| MS-COCO 10% | 37.90 | [config](configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.py)|[log](https://github.com/Adamdad/ConsistentTeacher/releases/download/v1.0.0/consistent_teacher_r50_fpn_coco_180k_10p_2x8_fp16.json)/[ckpt](https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg) |[log](https://drive.google.com/file/d/1_i0RcKSwnDubq4MQa13K_E5-hkbkCq0G/view?usp=share_link)/[ckpt](https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg) | [log](https://pan.baidu.com/s/1dOZdMjMdrrHQ4l-SZbPa_A?pwd=3pi4)/[ckpt](https://getshogun.com/wp-content/uploads/2022/07/61d5e1b6ae8db76cba5ac2fe_Coming-Soon-Page.jpeg)
 
+
 **MS-COCO100% Labeled + Unlabeled Data**
 
 | Method | Data | mAP| config| Links | Google Drive | Baidu Drive
@@ -46,9 +48,14 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 
 **PASCAL VOC07 Label + VOC12 Unlabel**
 
-| Method | Data| mAP| AP50| config| 
-|---- | ----| -----| ---- | ---- |
-| ConsistentTeacher |PASCAL VOC07 Label + VOC12 Unlabel| 59.00 | 81.00 |  [config](configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py)|
+| Method | Data| mAP| AP50| config| Links
+|---- | ----| -----| ---- | ---- | ---- |
+| ConsistentTeacher |PASCAL VOC07 Label + VOC12 Unlabel| 59.00 | 81.00 |  [config](configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py)| [log](https://github.com/Adamdad/ConsistentTeacher/releases/download/v1.0.0/consistent_teacher_r50_fpn_voc0712_72k.json)/[ckpt](https://github.com/Adamdad/ConsistentTeacher/releases/download/v1.0.0/consistent_teacher_r50_fpn_voc0712_72k_iter_72000-6ffc1c06.pth)|
+
+#### Notes
+- Defaultly, all models are trained on 8*V100 GPUs with 5 images per GPU.
+- Additionally, we support the `2x8` and `fp16` training setting to ensure everyone is able to run the code, even with only 12G graphic cards. 
+- With `8x2+fp16`, the total training time for MS-COCO is **less than 1 day**.
 
 ## Visualizations
 
@@ -101,9 +108,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
     |   # Main file for train and evaluate the models
 
 ```
-### Notes
-- Defaultly, all models are trained on 8*V100 GPUs with 5 images per GPU.
-- Additionally, we support the `2x8` and `fp16` training setting to ensure everyone is able to run the code, even with only 12G graphic cards. 
+
 
 ## Usage
 
