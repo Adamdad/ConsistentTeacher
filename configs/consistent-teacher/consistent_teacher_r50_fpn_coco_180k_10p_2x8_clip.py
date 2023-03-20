@@ -2,7 +2,7 @@ _base_ = './consistent_teacher_r50_fpn_coco_180k_10p.py'
 
 model = dict(
     backbone=dict(
-        init_cfg=dict(type='Pretrained', checkpoint='/Checkpoint/yangxingyi/Pretrained/clip_R50.pt')))
+        init_cfg=dict(type='Pretrained', checkpoint='/Checkpoint/yangxingyi/Pretrained/clip_RN50.pt')))
 
 fold = 1
 percent = 10
