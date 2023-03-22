@@ -61,16 +61,20 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 
 ## Visualizations
 
-
+<!-- <style>
+    img {
+    float: center;
+    }
+</style> -->
 <table>
 <tbody>
 	<tr>
 		<td><img src="assets/13635702854_d31e5808a5_o_result.png" width="500"></td>
-        <td><img src="assets/1_result.png" width="200"style="display: block; margin-right: auto; margin-left: auto;"></td>
+        <td><img src="assets/1_result.png" width="200" float="left"></td>
 	</tr>
 	<tr>
         <td><img src="assets/15678203979_9e85a3f42e_o_results.png" width="500"></td>
-		<td><center><img src="assets/2_result.png" width="360"></center></td>
+		<td><img src="assets/2_result.png" width="360" float="left"></td>
 	</tr>
 </tbody>
 </table>
