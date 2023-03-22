@@ -69,7 +69,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 		<td><img src="assets/15678203979_9e85a3f42e_o_results.png"></td>
 	</tr>
 	<tr>
-        <td><center><img src="assets/1_result.png" width="300"></center></td>
+        <td><center><img src="assets/1_result.png" width="200"></center></td>
 		<td><center><img src="assets/2_result.png" width="300"></center></td>
 	</tr>
 </tbody>
