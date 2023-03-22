@@ -71,7 +71,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
     <tr>
 	</tr>
 	<tr>
-        <td><center><img src="assets/1_result.png" width="200"></center></td>
+        <td><img src="assets/1_result.png" width="200"></td>
 		<td><center><img src="assets/2_result.png" width="300"></center></td>
 	</tr>
 </tbody>
