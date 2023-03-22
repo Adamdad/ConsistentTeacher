@@ -61,17 +61,19 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 
 ## Visualizations
 
-| **Zero-shot on KITTI** | 
-|-----|
-![kitti1](assets/0000000000_results.png) | 
- ![kitti2](assets/0000000004_results.png)|
 
-
-| **Zero-shot on openImages** |  |
-|-----|-----|
-![Openimage1](assets/13635702854_d31e5808a5_o_result.png) |  ![Openimage2](assets/15678203979_9e85a3f42e_o_results.png)
-
-
+<table>
+<tbody>
+	<tr>
+		<td><img src="assets/13635702854_d31e5808a5_o_result.png" alt="Paris" class="center"></td>
+		<td><img src="assets/15678203979_9e85a3f42e_o_results.png" alt="Paris" class="center"></td>
+	</tr>
+	<tr>
+        <td><img src="assets/1_result.png" alt="Paris" width="200" class="center"></td>
+		<td><img src="assets/2_result.png" alt="Paris" width="400" class="center"></td>
+	</tr>
+</tbody>
+</table>
 
 ## File Orgnizations
 

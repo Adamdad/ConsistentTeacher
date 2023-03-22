@@ -5,9 +5,9 @@ import ssod
 import warnings
 from mmcv.runner import load_checkpoint
 
-config_name = 'configs/consistent-teacher/consistent_teacher_r50_fpn_voc0712_72k.py'
-checkpoint = '/home/yangxingyi/yxy/Projects/Semi-Det/ckpt_logs/ConsistentTeacher/mean_teacher_tood_parallel_head_fam3d_r50_fpn_voc0712_72k_sz20_unlabeled2_gmm_dynamick_tau0.9995_focal/iter_68000.pth'
-img = mmcv.imread('assets/2008_002123.jpg')
+config_name = 'configs/consistent-teacher/consistent_teacher_r50_fpn_coco_720k_fulldata.py'
+checkpoint = '/home/yangxingyi/yxy/Projects/Semi-Det/ckpt_logs/ConsistentTeacher/consistent_teacher_r50_fpn_coco_720k_fulldata/consistent_teacher_r50_fpn_coco_720k_fulldata_iter_720000-d932808f.pth'
+img = mmcv.imread('assets/7374755946_b96148cfb3_z.jpg')
 cfg = mmcv.Config.fromfile(config_name)
 model = init_detector(config_name, checkpoint=None, device='cpu')
 checkpoint = load_checkpoint(model, checkpoint, revise_keys=[(r'^teacher\.', '')])
