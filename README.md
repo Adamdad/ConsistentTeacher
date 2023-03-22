@@ -66,26 +66,17 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 <tbody>
 	<tr>
 		<td><img src="assets/13635702854_d31e5808a5_o_result.png"></td>
-		<td><img src="assets/15678203979_9e85a3f42e_o_results.png"></td>
+        <td><center><img src="assets/1_result.png"></center></td>
 	</tr>
 	<tr>
-        <td><center><img src="assets/1_result.png" width="200"></center></td>
-		<td><center><img src="assets/2_result.png" width="360"></center></td>
+        <td><img src="assets/15678203979_9e85a3f42e_o_results.png"></td>
+		<td><center><img src="assets/2_result.png"></center></td>
 	</tr>
 </tbody>
 </table>
 
 
-<!-- ![](assets/13635702854_d31e5808a5_o_result.png)
-![](assets/15678203979_9e85a3f42e_o_results.png)
-<!-- ![](assets/1_result.png)
-![](assets/2_result.png) -->
 
-
-<!-- <p>
-  <img src="assets/1_result.png" width="200" />
-  <img src="assets/2_result.png" width="360" /> 
-</p>  -->
 
 ## File Orgnizations
 
