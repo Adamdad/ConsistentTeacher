@@ -70,7 +70,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 <tbody>
 	<tr>
 		<td><img src="assets/13635702854_d31e5808a5_o_result.png" width="500"></td>
-        <td><img src="assets/1_result.png" width="200" float="left"></td>
+        <td><img src="assets/8660104283_1012ce0896_z_result.jpg" width="500"></td>
 	</tr>
 	<tr>
         <td><img src="assets/15678203979_9e85a3f42e_o_results.png" width="500"></td>

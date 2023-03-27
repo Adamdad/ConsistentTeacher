@@ -7,7 +7,7 @@ from mmcv.runner import load_checkpoint
 
 config_name = 'configs/consistent-teacher/consistent_teacher_r50_fpn_coco_720k_fulldata.py'
 checkpoint = '/home/yangxingyi/yxy/Projects/Semi-Det/ckpt_logs/ConsistentTeacher/consistent_teacher_r50_fpn_coco_720k_fulldata/consistent_teacher_r50_fpn_coco_720k_fulldata_iter_720000-d932808f.pth'
-img = mmcv.imread('assets/7374755946_b96148cfb3_z.jpg')
+img = mmcv.imread('assets/8660104283_1012ce0896_z.jpg')
 cfg = mmcv.Config.fromfile(config_name)
 model = init_detector(config_name, checkpoint=None, device='cpu')
 checkpoint = load_checkpoint(model, checkpoint, revise_keys=[(r'^teacher\.', '')])
@@ -26,4 +26,4 @@ else:
 print(model.CLASSES)
 
 result = inference_detector(model, img)
-show_result_pyplot(model, img, result)
+show_result_pyplot(model, img, result,out_file='assets/8660104283_1012ce0896_z_result.jpg')
