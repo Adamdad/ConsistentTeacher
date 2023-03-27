@@ -4,7 +4,7 @@ fp16 = dict(_delete_=True,
             loss_scale=512.)
 model = dict(
     backbone=dict(
-        frozen_stages=0,
+        # frozen_stages=0,
         # norm_cfg=dict(type='SyncBN', requires_grad=True),
         norm_eval=False,
         init_cfg=dict(_delete_=True,
