@@ -99,7 +99,7 @@ class DynamicSoftLabelAssigner(BaseAssigner):
         strides = valid_prior[:, 2]
         distance = (valid_prior[:, None, :2] - gt_center[None, :, :]
                     ).pow(2).sum(-1).sqrt() / strides[:, None]
-        dis_cost = torch.pow(10, distance - 3)
+        dis_cost = 0.001 * torch.pow(10, distance)
 
         pairwise_ious = self.iou_calculator(valid_decoded_bbox,
                                             gt_bboxes[:, :4]).detach()
