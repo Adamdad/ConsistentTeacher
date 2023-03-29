@@ -58,6 +58,7 @@ All results, logs, configs and checkpoints are listed here. Enjoy 👀!
 - Defaultly, all models are trained on 8*V100 GPUs with 5 images per GPU.
 - Additionally, we support the `2x8` and `fp16` training setting to ensure everyone is able to run the code, even with only 12G graphic cards. 
 - With `8x2+fp16`, the total training time for MS-COCO is **less than 1 day**.
+- We carefully tuned the hyper-parameters after submitting the paper, which is why the results in the repository are slightly higher than those reported in the paper.
 
 ## Visualizations
 
