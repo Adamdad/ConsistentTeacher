@@ -254,9 +254,9 @@ test_pipeline = [
     ),
 ]
 
-CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
-           'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike',
-           'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor')
+CLASSES = ('train', 'car', 'cat', 'chair', 'person', 'diningtable', 'sofa', 
+           'horse', 'bicycle', 'bird', 'cow', 'aeroplane', 'tvmonitor', 
+           'bottle', 'pottedplant', 'boat', 'sheep', 'bus', 'motorbike', 'dog')
 data = dict(
     samples_per_gpu=5,
     workers_per_gpu=5,
