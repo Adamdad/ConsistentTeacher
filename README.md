@@ -132,7 +132,7 @@ or
 - `mmcv=1.7.1`
 
 #### Notes
-- We use [wandb](https://wandb.ai/) for visualization, if you don't want to use it, just comment line `273-284` in `configs/consistent-teacher/base.py`.
+- We use [wandb](https://wandb.ai/) for visualization, if you don't want to use it, just comment line `273-284` in `configs/consistent-teacher/consistent_teacher_r50_fpn_coco_180k_10p.py`.
 
 ### Installation
 Install all the requirements [INSTALL](https://mmdetection.readthedocs.io/en/stable/get_started.html), then git pull the `mmdetecton` repo and ConsistentTeacher under the same folder
