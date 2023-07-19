@@ -46,9 +46,10 @@ def prepare_coco_data(seed=1, percent=10.0, version=2017, seed_offset=0):
         new_anno["licenses"] = anno["licenses"]
         new_anno["categories"] = anno["categories"]
         new_anno["info"] = anno["info"]
-        path = "{}/{}".format(SAVE_DIR, "semi_supervised")
+
+        path = os.path.join(SAVE_DIR, "semi_supervised")
         if not os.path.exists(path):
-            os.mkdir(path)
+            os.makedirs(path, exist_ok=True)
 
         with open(
             "{root}/{folder}/{save_name}.json".format(
